@@ -1,0 +1,27 @@
+[[package]]
+category = "main"
+description = "Python MIDI API"
+name = "python-midi"
+optional = false
+python-versions = "*"
+version = "v0.2.4"
+
+[[package]]
+category = "main"
+description = "ANSII Color formatting for output in terminal."
+name = "termcolor"
+optional = false
+python-versions = "*"
+version = "1.1.0"
+
+[metadata]
+content-hash = "4f39837920e0a54d34c94e379e7003b993096ae7a22026c2e6679a0e6566f81a"
+python-versions = "^3.8"
+
+[metadata.files]
+python-midi = [
+    {file = "python-midi-v0.2.4.tar.gz", hash = "sha256:722226c9d65bef3191519397a80b45dece7e332561b2be15b1dd8cfc9099cbbc"},
+]
+termcolor = [
+    {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
+]
