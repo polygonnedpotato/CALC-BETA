@@ -1,0 +1,11 @@
+-- Move help() to seperate file
+-- move err() to seperate file
+-- implement Repl.it db for memory
+-- make seperate branches
+  -- stable branch
+  -- desktop branch
+  -- desktop stable branch
+-- use seprate files for desktop version
+-- make mobile version
+-- file saving
+-- possible GUI version? use pygame or html
