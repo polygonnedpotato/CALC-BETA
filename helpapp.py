@@ -44,10 +44,14 @@ def help(a):
         print("")
         print("help() -- this function")
         print("")
-        print("This application also uses 1 module.")
+        print("This application also uses 5 modules.")
         print(
             "  os -- used normally for OS related actions, but in this case, clearing the screen."
         )
+        print("  sys -- used to halt app in case of fatal error.")
+        print("  random -- used to randomize numbers.")
+        print("  math -- unused.")
+        print("  helpapp -- used for help")
         print("")
         print("This application uses 1 special Python class.")
         print("")
@@ -95,6 +99,10 @@ def help(a):
             color.BOLD + "  os" + color.END +
             "-- used normally for OS related actions, but in this case, clearing the screen."
         )
+        print(color.BOLD + "  sys" + color.END + " -- used to halt app in case of fatal error.")
+        print(color.BOLD + "  random" + color.END + " -- used to randomize numbers.")
+        print(color.BOLD + "  math" + color.END + " -- unused.")
+        print(color.BOLD + "  helpapp" + color.END + " -- used for help")
         print("")
         print("This application uses " + color.BOLD + "1" + color.END +
               " special Python class.")
