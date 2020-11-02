@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-DEBUG",
     "version":
-    "1.0-BETA05",
+    "1.1-BETA00",
     "isdebugver":
     "true",
     "isbetaver":
@@ -124,19 +124,31 @@ def calcbasic(*arg):
     if isofflineplatform == 1:
         if arg[1] == "+":
             result = str((x + y))
-            print("The Result is: " + result)
+            if result == "inf":
+              err("0x009", "main.py#def_calcbasic", "c")
+            else:
+              print("The Result is: " + result)
         if arg[1] == "-":
             result = str((x - y))
-            print("The Result is: " + result)
+            if result == "inf":
+              err("0x009", "main.py#def_calcbasic", "c")
+            else:
+              print("The Result is: " + result)
         if arg[1] == "*":
             result = str((x * y))
-            print("The Result is: " + result)
+            if result == "inf":
+              err("0x009", "main.py#def_calcbasic", "c")
+            else:
+              print("The Result is: " + result)
         if arg[1] == "/":
             if y == 0:
                 err("0x001", "main.py#def_calcbasic", "f")
             else:
                 result = str((x / y))
-                print("The Result is: " + result)
+                if result == "inf":
+                  err("0x009", "main.py#def_calcbasic", "c")
+                else:
+                  print("The Result is: " + result)
     else:
         if arg[1] == "+":
             result = str((x + y))
@@ -203,10 +215,10 @@ def main():
     print("")
     print("")
     if isofflineplatform == 1:
-        print("        CALC 1.0 [BETA]")
+        print("        CALC 1.1 [BETA]")
         print("          by  @elburg")
     else:
-        print(color.BOLD + color.DARKCYAN + "        CALC 1.0 [BETA]" +
+        print(color.BOLD + color.DARKCYAN + "        CALC 1.1 [BETA]" +
               color.END)
         print("          by  " + color.RED + "@" + color.YELLOW + "e" +
               color.GREEN + "l" + color.CYAN + "b" + color.DARKCYAN + "u" +
