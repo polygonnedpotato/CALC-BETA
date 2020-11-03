@@ -15,7 +15,7 @@ appinfo = {
     "appname":
     "Command-Based mathematical processor",
     "appnameshort":
-    "CALC-DEBUG",
+    "CALC-BETA",
     "version":
     "1.1-BETA00",
     "isdebugver":
@@ -39,13 +39,13 @@ appinfo = {
     "usesstrings?":
     "false",
     "functioncount":
-    4,
+    6,
     "funtions":
-    "help();calcbasic(*arg);main(source, srcver);err(code, source, c)",
+    "help();calcbasic(*arg);main(source, srcver);err(code, source, c);calcrand(*arg);r()",
     "usesmodules?":
     "true",
     "modules":
-    "os",
+    "os;sys;random;math;helpapp",
     "containshelp?":
     "true",
     "helpfunction":
@@ -349,7 +349,7 @@ print("Importing \"random\" [2/5]")
 import random
 print("Importing \"math\"   [3/5]")
 import math
-print("Importing \"help\"   [4/5]")
+print("Importing \"helpapp\"   [4/5]")
 import helpapp
 print("Finalizing...      [5/5]")
 print("Import Complete!")
