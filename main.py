@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA00",
+    "1.1-BETA01",
     "isdebugver":
     "true",
     "isbetaver":
@@ -296,20 +296,20 @@ def err(code, source, c):
         sys.exit()
     elif c == "c":
         if isofflineplatform == 1:
-            print("===FATAL_ERROR===============")
+            print("===CRITICAL_ERROR===============")
             print(
-                "A component has caused the application to close unexpectedly")
-            print("Here is data linked to this crash.")
+                "A component has ran into an error.")
+            print("Here is data linked to this error.")
             print("CODE:" + code)
             print(errcodedef)
             print(define)
             print("SOURCE:" + source)
-            print("TYPE:FATAL")
+            print("TYPE:CRITICAL")
         else:
-            print(color.RED + color.BOLD + "===FATAL_ERROR===============")
+            print(color.RED + color.BOLD + "===CRITICAL_ERROR===============")
             print(
-                "A component has caused the application to close unexpectedly")
-            print("Here is data linked to this crash.")
+                "A component has ran into an error.")
+            print("Here is data linked to this error.")
             print("CODE:" + code)
             print(errcodedef)
             print(define)
