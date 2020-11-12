@@ -6,8 +6,14 @@ This is a special command-based calculator that can calculate more numbers than 
 
 This can do basic calculations along with batch random number generation.
 
-%%%%%%%%%%%%%%%%%%%%
-% RUNNING THE CODE %
-%%%%%%%%%%%%%%%%%%%%
+&&&&&&&&&&&&&&&&&&&&
+& RUNNING THE CODE %
+&&&&&&&&&&&&&&&&&&&&
 
-To run the code, go to https://CALC-BETA.elburg.repl.run
+To run the code, go to https://CALC-BETA.elburg.repl.run -- Not working.
+
+#########
+# NOTES #
+#########
+
+The webpage used to run the code is not working right now. This will be fixed in the future.
