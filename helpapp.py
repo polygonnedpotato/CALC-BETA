@@ -65,7 +65,7 @@ def help(a):
         print("")
         print("NOTICE")
         print(
-            "This app was built on Python 3.9. This means that some functions will not work with previous versions of Python. It should also be noted that this may not work with any desktop versions of Python, so it would be best to use an online IDE, such as Repl.it."
+            "This app was built on Python 3.8.6. This means that some functions will not work with previous versions of Python. It should also be noted that this may not work with any desktop versions of Python, so it would be best to use an online IDE, such as Repl.it."
         )
     else:
         print(
@@ -93,8 +93,8 @@ def help(a):
         print("")
         print(color.BOLD + "help()" + color.END + " -- this function")
         print("")
-        print("This application also uses " + color.BOLD + "1" + color.END +
-              " module.")
+        print("This application also uses " + color.BOLD + "5" + color.END +
+              " modules.")
         print(
             color.BOLD + "  os" + color.END +
             "-- used normally for OS related actions, but in this case, clearing the screen."

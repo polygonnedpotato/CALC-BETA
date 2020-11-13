@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA01",
+    "1.1-BETA02",
     "isdebugver":
     "true",
     "isbetaver":
@@ -349,7 +349,7 @@ print("Importing \"random\" [2/5]")
 import random
 print("Importing \"math\"   [3/5]")
 import math
-print("Importing \"helpapp\"   [4/5]")
+print("Importing \"helpapp\"[4/5]")
 import helpapp
 print("Finalizing...      [5/5]")
 print("Import Complete!")
