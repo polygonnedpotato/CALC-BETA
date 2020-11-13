@@ -1,4 +1,4 @@
--- Move help() to seperate file
+-- Move help() to seperate file -- DONE
 -- move err() to seperate file
 -- implement Repl.it db for memory
 -- make seperate branches

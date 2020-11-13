@@ -59,7 +59,7 @@ def help(a):
             "  COLOR -- used to change the color, and or make the text printed in the shell bold and or underlined."
         )
         print(
-            "Unfortinatly, this class is not supported on this platform. Please use a different version, or run online at https://CALC.elburg.repl.run"
+            "Unfortinatly, this class is not supported on this platform. Please use a different version, or run online at https://repl.it/@elburg/CALC-BETA?embed=1&output=1"
         )
         print("")
         print("")

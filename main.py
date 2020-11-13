@@ -27,7 +27,7 @@ appinfo = {
     "webversion?":
     "true",
     "weblink":
-    "https://CALC-BETA.elburg.repl.run",
+    "https://repl.it/@elburg/CALC-BETA?embed=1&output=1",
     "usesclasses":
     "true",
     "classcount":
