@@ -41,4 +41,5 @@ appinfo = {
 def main():
   print("not_implimented")
 def full():
-  print("not_implimented")
+  for x, y in appinfo.items():
+    print(x, ":", y)
