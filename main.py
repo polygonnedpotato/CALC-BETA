@@ -204,8 +204,6 @@ def calcrand(*arg):
             stop = 1
         else:
             pass
-    else:
-        err("0x007", "main.py#def_calcrand", "f")
 
 
 #main function.
