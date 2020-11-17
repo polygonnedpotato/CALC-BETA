@@ -11,9 +11,3 @@ This can do basic calculations along with batch random number generation.
 ╚══════════════════╝  
 
 To run the code, go to https://repl.it/@elburg/CALC-BETA?embed=1&output=1
-
-╔═══════╗
-║ NOTES ║
-╚═══════╝
-
-The webpage used to run the code is not working right now. This will be fixed in the future. -- UPDATE: Fixed for now.

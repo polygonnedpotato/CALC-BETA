@@ -15,13 +15,13 @@ appinfo = {
     "appname":
     "Command-Based mathematical processor",
     "appnameshort":
-    "CALC-BETA",
+    "CALC",
     "version":
-    "1.1-BETA02",
+    "1.1",
     "isdebugver":
-    "true",
+    "false",
     "isbetaver":
-    "true",
+    "false",
     "developer":
     "@elburg",
     "webversion?":
@@ -204,8 +204,6 @@ def calcrand(*arg):
             stop = 1
         else:
             pass
-    else:
-        err("0x007", "main.py#def_calcrand", "f")
 
 
 #main function.
@@ -215,12 +213,12 @@ def main():
     print("")
     print("")
     if isofflineplatform == 1:
-        print("        CALC 1.1 [BETA]")
-        print("          by  @elburg")
+        print("           CALC 1.1")
+        print("          by @elburg")
     else:
-        print(color.BOLD + color.DARKCYAN + "        CALC 1.1 [BETA]" +
+        print(color.BOLD + color.DARKCYAN + "           CALC 1.1 " +
               color.END)
-        print("          by  " + color.RED + "@" + color.YELLOW + "e" +
+        print("          by " + color.RED + "@" + color.YELLOW + "e" +
               color.GREEN + "l" + color.CYAN + "b" + color.DARKCYAN + "u" +
               color.BLUE + "r" + color.PURPLE + "g" + color.END)
     print("")
