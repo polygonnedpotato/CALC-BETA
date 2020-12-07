@@ -318,26 +318,27 @@ def err(code, source, c):
 
 
 #os is used to clear the screen
-
-print(
-    "CALC uses a color class, which is used to display text with colors, bold fonts, and underlined fonts. While this is fully functional, some shells cannot view these fonts. Do you want to run with colors? [Y/N]"
-)
-other = input()
-if other == "y":
-    isofflineplatform = 0
-    print("Running with colors.")
-elif other == "Y":
-    isofflineplatform = 0
-    print("Running with colors.")
-elif other == "n":
-    isofflineplatform = 1
-    print("Running without colors.")
-elif other == "N":
-    isofflineplatform = 1
-    print("Running without colors.")
-else:
-    isofflineplatform = 1
-    print("No input or unknown input. Running without colors.")
+def start():
+  print(
+      "CALC uses a color class, which is used to display text with colors, bold fonts, and underlined fonts. While this is fully functional, some shells cannot view these fonts. Do you want to run with colors? [Y/N]"
+  )
+  other = input()
+  if other == "y":
+      isofflineplatform = 0
+      print("Running with colors.")
+  elif other == "Y":
+      isofflineplatform = 0
+      print("Running with colors.")
+  elif other == "n":
+      isofflineplatform = 1
+      print("Running without colors.")
+  elif other == "N":
+      isofflineplatform = 1
+      print("Running without colors.")
+  else:
+      isofflineplatform = 1
+      print("No input or unknown input. Running without colors.")
+  main()
 # starts application
 
 print("Initializing...")
@@ -353,4 +354,4 @@ print("Importing \"helpapp\"[4/5]")
 import helpapp
 print("Finalizing...      [5/5]")
 print("Import Complete!")
-main()
+
