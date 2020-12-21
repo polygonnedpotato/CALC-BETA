@@ -1,5 +1,5 @@
 -- Move help() to seperate file -- DONE
--- move err() to seperate file -- IN PROGRESS
+-- move err() to seperate file -- DONE
 -- implement Repl.it db for memory
 -- make seperate branches -- IN PROGRESS
   -- stable branch -- IN PROGRESS

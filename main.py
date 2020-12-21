@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA02",
+    "1.1-BETA03",
     "isdebugver":
     "true",
     "isbetaver":
@@ -88,7 +88,7 @@ errdef = {
 romannum = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
 def help():
-  helpapp.help(isofflineplatform)
+  hlp.help(isofflineplatform)
 
 def r():
     print("<<run_app>>")
@@ -179,7 +179,7 @@ def calcrand(*arg):
     while stop == 0:
         tempset.clear()
         for x in range(amt):
-            result = str(random.randint(low, high))
+            result = str(r.randint(low, high))
             tempset.append(result)
             print("Random integer number " + str(x) + " was returned as " +
                   result)
@@ -265,54 +265,7 @@ def main():
 
 # error reporter
 def err(code, source, c):
-    if code in errcodes:
-        errcodedef = errcodes[code]
-    else:
-        errcodedef = errcodes["0x006"]
-    define = errdef[code]
-    if c == "f":
-        if isofflineplatform == 1:
-            print("===FATAL_ERROR===============")
-            print(
-                "A component has caused the application to close unexpectedly")
-            print("Here is data linked to this crash.")
-            print("CODE:" + code)
-            print(errcodedef)
-            print(define)
-            print("SOURCE:" + source)
-            print("TYPE:FATAL")
-        else:
-            print(color.RED + color.BOLD + "===FATAL_ERROR===============")
-            print(
-                "A component has caused the application to close unexpectedly")
-            print("Here is data linked to this crash.")
-            print("CODE:" + code)
-            print(errcodedef)
-            print(define)
-            print("SOURCE:" + source)
-            print("TYPE:FATAL" + color.END)
-        sys.exit()
-    elif c == "c":
-        if isofflineplatform == 1:
-            print("===CRITICAL_ERROR===============")
-            print(
-                "A component has ran into an error.")
-            print("Here is data linked to this error.")
-            print("CODE:" + code)
-            print(errcodedef)
-            print(define)
-            print("SOURCE:" + source)
-            print("TYPE:CRITICAL")
-        else:
-            print(color.RED + color.BOLD + "===CRITICAL_ERROR===============")
-            print(
-                "A component has ran into an error.")
-            print("Here is data linked to this error.")
-            print("CODE:" + code)
-            print(errcodedef)
-            print(define)
-            print("SOURCE:" + source)
-            print("TYPE:FATAL" + color.END)
+  er.err(code, source, c, isofflineplatform)
 
 
 #os is used to clear the screen
@@ -333,22 +286,37 @@ elif other == "n":
 elif other == "N":
     isofflineplatform = 1
     print("Running without colors.")
+elif other == "ab":
+  import about
+  about.full()
+  import sys as s
+  s.exit()
+elif other == "git":
+  import error as er
+  print("Clearing Error data")
+  er.ready()
+  print("Ready for GitHub! Now Closing...")
+  import sys as s
+  s.exit()
 else:
     isofflineplatform = 1
     print("No input or unknown input. Running without colors.")
 # starts application
 
 print("Initializing...")
-print("Importing \"sys\"    [0/5]")
-import sys
-print("Importing \"os\"     [1/5]")
-import os
-print("Importing \"random\" [2/5]")
-import random
-print("Importing \"math\"   [3/5]")
-import math
-print("Importing \"helpapp\"[4/5]")
-import helpapp
-print("Finalizing...      [5/5]")
+print("Importing \"sys\"    [0/6]")
+import sys as s
+print("Importing \"os\"     [1/6]")
+import os as o
+print("Importing \"random\" [2/6]")
+import random as r
+print("Importing \"math\"   [3/6]")
+import math as m
+print("Importing \"helpapp\"[4/6]")
+import helpapp as hlp
+print("Importing \"error\"  [5/6]")
+import error as er
+a = er.ready()
+print("Finalizing...      [6/6]")
 print("Import Complete!")
 main()
