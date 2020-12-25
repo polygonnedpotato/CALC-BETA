@@ -106,7 +106,7 @@ def err(code, source, c, i):
             print("SOURCE:" + source)
             print("TYPE:CRITICAL")
         else:
-            print(color.RED + color.BOLD + "===CRITICAL_ERROR===============")
+            print(color.YELLOW + color.BOLD + "===CRITICAL_ERROR===============")
             print(
                 "A component has ran into an error.")
             print("Here is data linked to this error.")

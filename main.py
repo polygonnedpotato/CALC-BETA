@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA03",
+    "1.1-BETA04",
     "isdebugver":
     "true",
     "isbetaver":
@@ -183,16 +183,25 @@ def calcrand(*arg):
             tempset.append(result)
             print("Random integer number " + str(x) + " was returned as " +
                   result)
-        print("all numbers calculated")
+        print("All numbers calculated")
         tempint = min(tempset)
+        if tempint == "inf":
+          err("0x009", "main.py#def_calcrand", "c")
+        else:
+          print("The lowest number generated was " + tempint + ".")
         print("The lowest number generated was " + tempint + ".")
         tempint = max(tempset)
-        print("The highest number generated was " + tempint + ".")
+        if tempint == "inf":
+          err("0x009", "main.py#def_calcrand", "c")
+        else:
+          print("The highest number generated was " + tempint + ".")
         for x in tempset:
             tempavg += int(x)
         tempint = str(tempavg / amt)
-        print("The average number that was generated was " + tempint + ".")
-
+        if tempint == "inf":
+          err("0x009", "main.py#def_calcrand", "c")
+        else:
+          print("The average number that was generated was " + tempint + ".")
         temp = input("Repeat? [Y/N]?")
         if temp == "y":
             stop = 0

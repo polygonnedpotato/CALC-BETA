@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA03",
+    "1.1-BETA04",
     "isdebugver":
     "true",
     "isbetaver":
