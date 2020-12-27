@@ -9,7 +9,7 @@ class color:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     END = '\033[0m'
-
+isofflineplatform = 1
 
 appinfo = {
     "appname":
@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA04",
+    "1.1-BETA05",
     "isdebugver":
     "true",
     "isbetaver":
@@ -51,71 +51,11 @@ appinfo = {
     "helpfunction":
     "calc.help()"
 }
-errcodes = {
-    "0x000": "INVALID_INPUT",
-    "0x001": "CANNOT_DIVIDE_BY_ZERO",
-    "0x002": "FS_ACCESS_DENIED",
-    "0x003": "APPLICATION_IS_CORRUPTED",
-    "0x004": "SAMPLE_ERROR",
-    "0x005": "SAMPLE_ERROR_CRITICAL",
-    "0x006": "UNKNOWN_ERROR",
-    "0x007": "UNIMPLEMENTED_FUNCTION",
-    "0x008": "DEV_ONLY",
-    "0x009": "OUT_OF_RANGE",
-}
-errdef = {
-    "0x000":
-    "The input recived was in an invalid format, or was not an input the program was looking for.",
-    "0x001":
-    "It is impossible to divide any number by Zero(0).",
-    "0x002":
-    "The file system cannot be accessed.",
-    "0x003":
-    "The application is corrupted.",
-    "0x004":
-    "This is a sample error.",
-    "0x005":
-    "This is a sample critical error.",
-    "0x006":
-    "There was an unknown error. Try running the app again and try to find out where it occured",
-    "0x007":
-    "This function is not implemented",
-    "0x008":
-    "This function can only be accessed by the developer",
-    "0x009":
-    "The number is out of the 64-bit range and was returned as infinity",
-}
+
 romannum = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
 def help():
   hlp.help(isofflineplatform)
-
-def r():
-    print("<<run_app>>")
-    print("0) help()")
-    print("1) calcbasic()")
-    print("2) calcrand()")
-    print("3) main()")
-    print("4) err()")
-    a = int(input("q:"))
-    if a == 0:
-        help()
-    elif a == 1:
-        calcbasic(10890, "+", 28753)
-        calcbasic(10890, "-", 28753)
-        calcbasic(10890, "*", 28753)
-        calcbasic(10890, "/", 28753)
-        calcbasic(10890, "/", 0)
-    elif a == 2:
-        calcrand(5475, -2300, 2354444)
-    elif a == 3:
-        main("pass", -1)
-    elif a == 4:
-        err(0x004, "SAMPLE_TEXT", "f")
-
-
-
-
 
 def calcbasic(*arg):
     x = arg[0]
@@ -268,6 +208,10 @@ def main():
             break
         elif typeofmath == "help":
             help()
+        elif typeofmath == "ferr":
+          err("0x004", "main.py#def_main", "f")
+        elif typeofmath == "cerr":
+          err("0x005", "main.py#def_main", "c")
         else:
             err("0x000", "main.py#def_main", "f")
 
@@ -276,7 +220,39 @@ def main():
 def err(code, source, c):
   er.err(code, source, c, isofflineplatform)
 
-
+def r():
+    print("<<run_app>>")
+    print("0) help()")
+    print("1) calcbasic()")
+    print("2) calcrand()")
+    print("3) main()")
+    print("4) err()")
+    print("5) err()_alt")
+    print("6) quit")
+    import helpapp as hlp
+    import error as er
+    import sys as s
+    isofflineplatform = 1
+    a = int(input("q:"))
+    if a == 0:
+        hlp.help(isofflineplatform)
+    elif a == 1:
+        calcbasic(10890, "+", 28753)
+        calcbasic(10890, "-", 28753)
+        calcbasic(10890, "*", 28753)
+        calcbasic(10890, "/", 28753)
+        calcbasic(10890, "/", 0)
+    elif a == 2:
+        calcrand(5475, -2300, 2354444)
+    elif a == 3:
+        main()
+    elif a == 4:
+        er.err("0x004", "SAMPLE_TEXT", "f", 1)
+    elif a == 5:
+        er.err("0x004", "SAMPLE_TEXT", "c", 1)
+    elif a == 6:
+      s.exit()
+    s.exit()
 #os is used to clear the screen
 
 print(
@@ -307,25 +283,29 @@ elif other == "git":
   print("Ready for GitHub! Now Closing...")
   import sys as s
   s.exit()
+elif other == "r":
+  r()
 else:
     isofflineplatform = 1
     print("No input or unknown input. Running without colors.")
 # starts application
 
 print("Initializing...")
-print("Importing \"sys\"    [0/6]")
-import sys as s
-print("Importing \"os\"     [1/6]")
-import os as o
-print("Importing \"random\" [2/6]")
-import random as r
-print("Importing \"math\"   [3/6]")
-import math as m
-print("Importing \"helpapp\"[4/6]")
-import helpapp as hlp
-print("Importing \"error\"  [5/6]")
+print("Importing \"error\"  [0/6]")
 import error as er
-a = er.ready()
+print("Importing \"sys\"    [1/6]")
+import sys as s
+print("Importing \"os\"     [2/6]")
+import os as o
+print("Importing \"random\" [3/6]")
+import random as r
+print("Importing \"math\"   [4/6]")
+import math as m
+print("Importing \"helpapp\"[5/6]")
+import helpapp as hlp
 print("Finalizing...      [6/6]")
+a = er.ready()
+o.system('clear')
+o.system('cls')
 print("Import Complete!")
 main()
