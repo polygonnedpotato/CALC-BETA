@@ -62,6 +62,14 @@ def help(a):
             "Unfortinatly, this class is not supported on this platform. Please use a different version, or run online at https://repl.it/@elburg/CALC-BETA?embed=1&output=1"
         )
         print("")
+        print("Credits!")
+        print("")
+        print("elburg (polygonnedpotato) -- Made the project and everything else.")
+        print("")
+        print("NrdyBhu1 (NrdyBhu1) -- Made the license and is Making the Python 3.9 Port!")
+        print("")
+        print("mat (mat1) -- for not smaccing me with that banhammer.")
+        print("")
         print("")
         print("NOTICE")
         print(
@@ -132,8 +140,16 @@ def help(a):
             "    color.END -- resets all color settings and shows default text"
         )
         print("")
+        print(color.BOLD + "Credits!")
         print("")
-        print(color.BOLD + "NOTICE")
+        print("elburg (polygonnedpotato) -- Made the project and everything else.")
+        print("")
+        print("NrdyBhu1 (NrdyBhu1) -- Made the license and is Making the Python 3.9 Port!")
+        print("")
+        print("mat (mat1) -- for not smaccing me with that banhammer.")
+        print("")
+        print("")
+        print("NOTICE")
         print(
             "This app was built on Python 3.8.6. This means that some functions will not work with previous versions of Python. It should also be noted that this may not work with any desktop versions of Python, so it would be best to use an online IDE, such as Repl.it."
             + color.END)

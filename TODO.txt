@@ -11,3 +11,4 @@
 -- possible GUI version? use pygame or html
 -- make embedded version
 -- convert README to MarkDown.
+-- allow decimal inputs
