@@ -10,14 +10,14 @@ class color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 isofflineplatform = 1
-
+debug = 0
 appinfo = {
     "appname":
     "Command-Based mathematical processor",
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA06",
+    "1.1-BETA07",
     "isdebugver":
     "true",
     "isbetaver":
@@ -55,7 +55,7 @@ appinfo = {
 romannum = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
 def help():
-  hlp.help(isofflineplatform)
+  hlp.help(isofflineplatform , debug)
 
 def calcbasic(*arg):
     x = arg[0]
@@ -153,6 +153,14 @@ def calcrand(*arg):
             stop = 1
         else:
             pass
+def calcint(*arg):
+  inpu = arg[0]
+  if int(inpu) < 0:
+    print(inpu + " is negative.")
+  elif int(inpu) > 0:
+    print(inpu + " is positive.")
+  else:
+    print(inpu + " is not negative nor positive.")
 
 
 #main function.
@@ -171,13 +179,17 @@ def main():
               color.GREEN + "l" + color.CYAN + "b" + color.DARKCYAN + "u" +
               color.BLUE + "r" + color.PURPLE + "g" + color.END)
     print("")
+    if debug == 1:
+      print('DEBUG MODE')
+    else:
+      pass
     print("VERSION:" + appinfo["version"])
     print("")
     print("")
     loop = 0
     while loop == 0:
         print(
-            "Please enter the type of calculations you want to do. (For Help, type \"help\" or \"exit\" to exit) AVALIABLE:BASIC,RAND"
+            "Please enter the type of calculations you want to do. (For Help, type \"help\" or \"exit\" to exit) AVALIABLE:BASIC,RAND,INT"
         )
         temp = input()
         typeofmath = temp
@@ -204,6 +216,14 @@ def main():
             temp = input("Enter the highest possible number you want:")
             h = int(temp)
             calcrand(a, l, h)
+        elif typeofmath == "Int" or typeofmath == "int" or typeofmath == "INT":
+          stop = 0
+          while stop == 0:
+            inp = input("Enter Integer (Enter STOP to end): ")
+            if inp == "STOP":
+              break
+            else:
+              calcint(inp)
         elif typeofmath == "exit" or typeofmath == "cancel" or typeofmath == "pass" or typeofmath == "quit":
             break
         elif typeofmath == "help":
@@ -218,7 +238,7 @@ def main():
 
 # error reporter
 def err(code, source, c):
-  er.err(code, source, c, isofflineplatform)
+  er.err(code, source, c, isofflineplatform , debug)
 
 def r():
     print("<<run_app>>")
@@ -265,11 +285,27 @@ if other == "y":
 elif other == "Y":
     isofflineplatform = 0
     print("Running with colors.")
+elif other == "y -d":
+    isofflineplatform = 0
+    debug = 1
+    print("Running with colors.")
+elif other == "Y -d":
+    isofflineplatform = 0
+    debug = 1
+    print("Running with colors.")
 elif other == "n":
     isofflineplatform = 1
     print("Running without colors.")
 elif other == "N":
     isofflineplatform = 1
+    print("Running without colors.")
+elif other == "n -d":
+    isofflineplatform = 1
+    debug = 1
+    print("Running without colors.")
+elif other == "N -d":
+    isofflineplatform = 1
+    debug = 1
     print("Running without colors.")
 elif other == "ab":
   import about
@@ -305,7 +341,10 @@ print("Importing \"helpapp\"[5/6]")
 import helpapp as hlp
 print("Finalizing...      [6/6]")
 a = er.ready()
-o.system('clear')
-o.system('cls')
+if debug == 1:
+  pass
+else:
+  o.system('clear')
+  o.system('cls')
 print("Import Complete!")
 main()

@@ -12,9 +12,12 @@ class color:
 
 
 
-def help(a):
-    os.system('cls')  # For Windows
-    os.system('clear')  # For Linux/OS X
+def help(a, d):
+    if d == 1:
+      pass
+    else:
+      os.system('cls')  # For Windows
+      os.system('clear')  # For Linux/OS X
     print("")
     print("")
     print("")

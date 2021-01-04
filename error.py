@@ -30,7 +30,7 @@ errdef = {
     "0x008": "This function can only be accessed by the developer",
     "0x009": "The number is out of the 64-bit range and was returned as infinity",
 }
-def err(code, source, c, i):
+def err(code, source, c, i, d):
     if code in errcodes:
         errcodedef = errcodes[code]
     else:
@@ -68,6 +68,10 @@ def err(code, source, c, i):
         f.write("\n")
         f.write("\nApp Name and version: " + mtdt["appnameshort"] + "" + mtdt["version"])
         f.write("\nDeveloper: " + mtdt["developer"])
+        if d == 1:
+          f.write(" [DEBUG-MODE]")
+        else:
+          pass
         f.write("\nDate and Time of Error: " + d.strftime("%c"))
         f.write("\nError code returned: " + code)
         f.write("\nError Name: " + errcodedef)
