@@ -1,10 +1,10 @@
 ╔══════════╗  
-║ CALC 1.1 ║   
+║ CALC 1.2 ║   
 ╚══════════╝  
 
 This is a special command-based calculator that can calculate more numbers than your regular calculator. this means you will never get another one of those "inf" results ever again!
 
-This can do basic calculations along with batch random number generation.
+This can do basic calculations along with batch random number generation and integer evaluation.
 
 ╔══════════════════╗  
 ║ RUNNING THE CODE ║  

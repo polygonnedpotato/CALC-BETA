@@ -21,7 +21,7 @@ def help(a, d):
     print("")
     print("")
     print("")
-    print("CALC 1.1 HELP")
+    print("CALC 1.2 HELP")
     print("")
     print("")
     if a == 1:  # if the platform can't show colors, it will show only text without colors

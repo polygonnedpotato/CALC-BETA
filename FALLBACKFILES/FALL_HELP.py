@@ -4,7 +4,7 @@ def help():
     print("")
     print("")
     print("")
-    print("CALC 1.0 HELP")
+    print("CALC 1.2 HELP")
     print("")
     print("")
     if isofflineplatform == 1:  # if the platform can't show colors, it will show only text without colors

@@ -1,14 +1,8 @@
 -- Move help() to seperate file -- DONE
 -- move err() to seperate file -- DONE
--- implement Repl.it db for memory
--- make seperate branches -- IN PROGRESS
-  -- stable branch -- DONE
-  -- desktop branch
-  -- desktop stable branch
--- use seprate files for desktop version
--- make mobile version
--- file saving
+-- implement Repl.it db for memory -- IN PROGRESS
+-- file saving -- IN PROGRESS
 -- possible GUI version? use pygame or html
--- make embedded version
+-- make embedded version -- IN PROGRESS
 -- convert README to MarkDown.
 -- allow decimal inputs

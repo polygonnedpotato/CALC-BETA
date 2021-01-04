@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.1-BETA07",
+    "1.2-BETA00",
     "isdebugver":
     "true",
     "isbetaver":
@@ -170,7 +170,7 @@ def main():
     print("")
     print("")
     if isofflineplatform == 1:
-        print("        CALC 1.1 [BETA]")
+        print("        CALC 1.2 [BETA]")
         print("          by  @elburg")
     else:
         print(color.BOLD + color.DARKCYAN + "        CALC 1.1 [BETA]" +
@@ -275,72 +275,47 @@ def r():
     s.exit()
 #os is used to clear the screen
 
-print(
-    "CALC uses a color class, which is used to display text with colors, bold fonts, and underlined fonts. While this is fully functional, some shells cannot view these fonts. Do you want to run with colors? [Y/N]"
-)
-other = input()
-if other == "y":
-    isofflineplatform = 0
-    print("Running with colors.")
-elif other == "Y":
-    isofflineplatform = 0
-    print("Running with colors.")
-elif other == "y -d":
-    isofflineplatform = 0
+import platform as p
+if p.system() == "Linux":
+  isofflineplatform = 0
+  te = input("CALC has detected that the platform is Linux. This means Colors will be used. Press ENTER to start.")
+  if te == " -d":
     debug = 1
-    print("Running with colors.")
-elif other == "Y -d":
-    isofflineplatform = 0
+  else:
+    pass
+elif p.system() == "Windows":
+  isofflineplatform = 1
+  te = input("CALC has detected that the platform is Windows. This means Colors will not be used. Press ENTER to start.")
+  if te == " -d":
     debug = 1
-    print("Running with colors.")
-elif other == "n":
-    isofflineplatform = 1
-    print("Running without colors.")
-elif other == "N":
-    isofflineplatform = 1
-    print("Running without colors.")
-elif other == "n -d":
-    isofflineplatform = 1
+  else:
+    pass
+elif p.system() == "Darwin":
+  isofflineplatform = 0
+  te = input("WARNING! CALC CANNOT RUN ON DARWIN AS THE PYTHON VERSION INSTALLED IS 2.7. PRESS ENTER TO CONTINUE ANYWAYS.")
+  if te == " -d":
     debug = 1
-    print("Running without colors.")
-elif other == "N -d":
-    isofflineplatform = 1
-    debug = 1
-    print("Running without colors.")
-elif other == "ab":
-  import about
-  about.full()
-  import sys as s
-  s.exit()
-elif other == "git":
-  import error as er
-  print("Clearing Error data")
-  er.ready()
-  print("Ready for GitHub! Now Closing...")
-  import sys as s
-  s.exit()
-elif other == "r":
-  r()
-else:
-    isofflineplatform = 1
-    print("No input or unknown input. Running without colors.")
-# starts application
-
+  else:
+    pass
 print("Initializing...")
-print("Importing \"error\"  [0/6]")
+print("Importing \"error\"  [0/7]")
 import error as er
-print("Importing \"sys\"    [1/6]")
+print("Importing \"sys\"    [1/7]")
 import sys as s
-print("Importing \"os\"     [2/6]")
+print("Importing \"os\"     [2/7]")
 import os as o
-print("Importing \"random\" [3/6]")
+print("Importing \"random\" [3/7]")
 import random as r
-print("Importing \"math\"   [4/6]")
+print("Importing \"math\"   [4/7]")
 import math as m
-print("Importing \"helpapp\"[5/6]")
+print("Importing \"helpapp\"[5/7]")
 import helpapp as hlp
-print("Finalizing...      [6/6]")
+print("Importing \"db\"     [6/7]")
+from replit import db as d
+print("Finalizing...      [7/7]")
 a = er.ready()
+d["ans"] = "nan"
+d["starttime"] = ""
 if debug == 1:
   pass
 else:
