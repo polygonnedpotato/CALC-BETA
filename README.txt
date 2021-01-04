@@ -12,6 +12,12 @@ This can do basic calculations along with batch random number generation.
 
 To run the code, go to https://repl.it/@elburg/CALC-BETA?embed=1&output=1
 
+╔══════════════════╗
+║ EMBEDDED VERSION ║
+╚══════════════════╝
+
+Want to use this in your project? Go to https://github.com/polygonnedpotato/CALC-BETA/tree/embedded for an embedded version!
+
 ╔═══════╗
 ║ NOTES ║
 ╚═══════╝
