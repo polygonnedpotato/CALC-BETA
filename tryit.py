@@ -1,3 +1,12 @@
-import main.py as calc
-print("import done")
+import main as calc
+print("This script shows examples of usage as well as the user guide.")
 calc.help()
+print("")
+print("examples")
+print(calc.calcbasic("128278", "+" , "27837") + " e1")
+print(calc.calcbasic("133278", "-" , "454354") + " e2")
+print(calc.calcbasic("12", "*" , "2783243") + " e3")
+print(calc.calcbasic("118", "/" , "27833337") + " e4")
+print(calc.calcrand("124", "0" , "1000" , "0") + " e5")
+print(calc.calcrand("425", "34" , "104550" , "1") + " e6")
+print(calc.calcrand("1343", "34443" , "43103543540" , "2") + " e7")
