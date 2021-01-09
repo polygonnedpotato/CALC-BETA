@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.2-BETA00",
+    "1.2-BETA01",
     "isdebugver":
     "true",
     "isbetaver":
@@ -68,18 +68,21 @@ def calcbasic(*arg):
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
+              d["ans"] = result
         if arg[1] == "-":
             result = str((x - y))
             if result == "inf":
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
+              d["ans"] = result
         if arg[1] == "*":
             result = str((x * y))
             if result == "inf":
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
+              d["ans"] = result
         if arg[1] == "/":
             if y == 0:
                 err("0x001", "main.py#def_calcbasic", "f")
@@ -89,22 +92,27 @@ def calcbasic(*arg):
                   err("0x009", "main.py#def_calcbasic", "c")
                 else:
                   print("The Result is: " + result)
+                  d["ans"] = result
     else:
         if arg[1] == "+":
             result = str((x + y))
             print("The Result is: " + color.BOLD + result + color.END)
+            d["ans"] = result
         if arg[1] == "-":
             result = str((x - y))
             print("The Result is: " + color.BOLD + result + color.END)
+            d["ans"] = result
         if arg[1] == "*":
             result = str((x * y))
             print("The Result is: " + color.BOLD + result + color.END)
+            d["ans"] = result
         if arg[1] == "/":
             if y == 0:
                 err("0x001", "main.py#def_calcbasic", "f")
             else:
                 result = str((x / y))
                 print("The Result is: " + color.BOLD + result + color.END)
+                d["ans"] = result
 
 
 def calcrand(*arg):
@@ -165,7 +173,6 @@ def calcint(*arg):
 
 #main function.
 def main():
-    print("Done. Intializing App...")
     print("")
     print("")
     print("")
@@ -173,7 +180,7 @@ def main():
         print("        CALC 1.2 [BETA]")
         print("          by  @elburg")
     else:
-        print(color.BOLD + color.DARKCYAN + "        CALC 1.1 [BETA]" +
+        print(color.BOLD + color.DARKCYAN + "        CALC 1.2 [BETA]" +
               color.END)
         print("          by  " + color.RED + "@" + color.YELLOW + "e" +
               color.GREEN + "l" + color.CYAN + "b" + color.DARKCYAN + "u" +
@@ -200,9 +207,15 @@ def main():
             print("Basic")
             print("")
             temp = input("Enter your first digit:")
-            d0 = int(temp)
+            if temp == "ans":
+              d0 = int(d["ans"])
+            else:
+              d0 = int(temp)
             temp = input("Enter your second digit:")
-            d1 = int(temp)
+            if temp == "ans":
+              d1 = int(d["ans"])
+            else:
+              d1 = int(temp)
             temp = input(
                 "Enter which operation you want to execute. (Types Avaliable: +, -, *, /):"
             )
@@ -321,5 +334,5 @@ if debug == 1:
 else:
   o.system('clear')
   o.system('cls')
-print("Import Complete!")
+print("Import Complete! Initializing CALC")
 main()
