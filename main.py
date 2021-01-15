@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.2-BETA01",
+    "1.2-BETA02",
     "isdebugver":
     "true",
     "isbetaver":
@@ -294,6 +294,9 @@ if p.system() == "Linux":
   te = input("CALC has detected that the platform is Linux. This means Colors will be used. Press ENTER to start.")
   if te == " -d":
     debug = 1
+  elif te == " -b":
+    import subprocess
+    subprocess.call("build.sh")
   else:
     pass
 elif p.system() == "Windows":
