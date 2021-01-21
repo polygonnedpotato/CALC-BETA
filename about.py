@@ -1,7 +1,7 @@
 appinfo = {
     "appname":"Command-Based mathematical processor",
     "appnameshort":"CALC-BETA",
-    "version":"1.2-BETA02",
+    "version":"1.2-BETA03",
     "isdebugver":"true",
     "isbetaver":"true",
     "developer":"@elburg",

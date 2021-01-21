@@ -67,11 +67,11 @@ def err(code, source, c, i, d):
         f.write("\nA fatal error had occurred while CALC was in use so CALC had to be stopped. Below are details about the said crash.")
         f.write("\n")
         f.write("\nApp Name and version: " + mtdt["appnameshort"] + "" + mtdt["version"])
-        f.write("\nDeveloper: " + mtdt["developer"])
         if d == 1:
           f.write(" [DEBUG-MODE]")
         else:
           pass
+        f.write("\nDeveloper: " + mtdt["developer"])
         f.write("\nDate and Time of Error: " + d.strftime("%c"))
         f.write("\nError code returned: " + code)
         f.write("\nError Name: " + errcodedef)
@@ -87,7 +87,35 @@ def err(code, source, c, i, d):
           f.write(" : ")
           f.write(str(y))
         f.close()
-        print("Hey! Before you restart this, Please open the \"errinf.md\" file. It contains error data on what just happened. Download it and use it to write an issue in the project's GitHub")
+        a = input("Hey! Before you restart this, Please open the \"errinf.md\" file. It contains error data on what just happened. Download it and use it to write an issue in the project's GitHub")
+        if a == "failsafe":
+          print("manual error details")
+          print("")
+          print("")
+          print("")
+          print("# Error details")
+          print("A fatal error had occurred while CALC was in use so CALC had to be stopped. Below are details about the said crash.")
+          print("")
+          
+          if d == 1:
+            print("App Name and version: " + mtdt["appnameshort"] + "" + mtdt["version"] + "[DEBUG-MODE]")
+          else:
+            print("App Name and version: " + mtdt["appnameshort"] + "" + mtdt["version"])
+          print("Developer: " + mtdt["developer"])
+          print("Date and Time of Error: " + d.strftime("%c"))
+          print("Error code returned: " + code)
+          print("Error Name: " + errcodedef)
+          print("Definition: " + define)
+          print("Source: " + source)
+          print("Comments: Replace this part with your comments including what had happened.")
+          print("")
+          print("Extra Metadata for developer:")
+          print("")
+          print("")
+          for x, y in mtdt.items():
+            print(x, ":", y)
+          print("")
+          se = input("copy the above lines and add it to a text document. then go to \"github.com\polygonnedpotato\calc-beta\", click on issues, click new issue, and click \"Get started\"")
         s.exit()
     elif c == "c":
         if i == 1:

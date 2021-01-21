@@ -17,7 +17,7 @@ appinfo = {
     "appnameshort":
     "CALC-BETA",
     "version":
-    "1.2-BETA02",
+    "1.2-BETA03",
     "isdebugver":
     "true",
     "isbetaver":
@@ -246,7 +246,7 @@ def main():
         elif typeofmath == "cerr":
           err("0x005", "main.py#def_main", "c")
         else:
-            err("0x000", "main.py#def_main", "f")
+          err("0x000", "main.py#def_main", "f")
 
 
 # error reporter
