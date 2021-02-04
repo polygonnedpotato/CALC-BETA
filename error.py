@@ -1,6 +1,9 @@
-import sys as s
-from about import appinfo as mtdt
 import datetime as dt
+import sys as s
+
+from about import appinfo as mtdt
+
+
 class color:
     YELLOW = '\033[93m'
     RED = '\033[91m'
@@ -17,18 +20,20 @@ errcodes = {
     "0x007": "UNIMPLEMENTED_FUNCTION",
     "0x008": "DEV_ONLY",
     "0x009": "OUT_OF_RANGE",
+  "1x000": "NOT_REPLIT"
 }
 errdef = {
-    "0x000": "The input recived was in an invalid format, or was not an input the program was looking for.",
-    "0x001": "It is impossible to divide any number by Zero(0).",
-    "0x002": "The file system cannot be accessed.",
-    "0x003": "The application is corrupted.",
-    "0x004": "This is a sample error.",
-    "0x005": "This is a sample critical error.",
-    "0x006": "There was an unknown error. Try running the app again and try to find out where it occured",
-    "0x007": "This function is not implemented",
-    "0x008": "This function can only be accessed by the developer",
-    "0x009": "The number is out of the 64-bit range and was returned as infinity",
+  "0x000": "The input received was in an invalid format, or was not an input the program was looking for.",
+  "0x001": "It is impossible to divide any number by Zero(0).",
+  "0x002": "The file system cannot be accessed.",
+  "0x003": "The application is corrupted.",
+  "0x004": "This is a sample error.",
+  "0x005": "This is a sample critical error.",
+  "0x006": "There was an unknown error. Try running the app again and try to find out where it occurred",
+  "0x007": "This function is not implemented",
+  "0x008": "This function can only be accessed by the developer",
+  "0x009": "The number is out of the 64-bit range and was returned as infinity",
+  "1x000": "This command is not available. the platform this command can b used is on Repl.it"
 }
 def err(code, source, c, i, d):
     if code in errcodes:

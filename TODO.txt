@@ -1,5 +1,5 @@
--- Move help() to seperate file -- DONE
--- move err() to seperate file -- DONE
+-- Move help() to separate file -- DONE
+-- move err() to separate file -- DONE
 -- implement Repl.it db for memory -- IN PROGRESS
 -- file saving -- IN PROGRESS
 -- possible GUI version? use pygame or html

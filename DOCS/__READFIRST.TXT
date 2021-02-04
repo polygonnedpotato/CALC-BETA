@@ -5,7 +5,7 @@ IN ORDER TO MAKE EDITS TO THIS REPOSITORY, PLEASE MAKE SURE TO FOLLOW THESE GUID
 1. ALL COMMITS MUST BE PUSHED AS FOLLOWS:
     -- TITLE: CALC [VERSION]-BETA[BETAVERSION] (remove  the beta version if it is for the stable version.)
       -- [VERSION] is entered as the version number. the version CALC is currently at is 1.1.
-      -- [BETAVERSION] refers to the beta build version that is most stable for the public. Please talk to me before bumbing up the version.
-    -- Description: repeat the same, then in a new line, start adding changes, having every change being in a seperate line.
+      -- [BETAVERSION] refers to the beta build version that is most stable for the public. Please talk to me before bumping up the version.
+    -- Description: repeat the same, then in a new line, start adding changes, having every change being in a separate line.
 
 that is all for now.

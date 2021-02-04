@@ -26,4 +26,4 @@ The GitHub Repository for this project is at https://github.com/polygonnedpotato
 
 The webpage used to run the code is not working right now. This will be fixed in the future. -- UPDATE: Fixed for now.
 
-IMPORTANT! PLEASE OPEN THIS DOCUMENT FIRST AND READ BEFORE MAKING EDITS FOR GUIDLINES ON EDITING THIS REPO
+IMPORTANT! PLEASE OPEN THIS DOCUMENT FIRST AND READ BEFORE MAKING EDITS FOR GUIDELINES ON EDITING THIS REPO

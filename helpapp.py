@@ -62,7 +62,7 @@ def help(a, d):
             "  COLOR -- used to change the color, and or make the text printed in the shell bold and or underlined."
         )
         print(
-            "Unfortinatly, this class is not supported on this platform. Please use a different version, or run online at https://repl.it/@elburg/CALC-BETA?embed=1&output=1"
+            "Unfortunately, this class is not supported on this platform. Please use a different version, or run online at https://repl.it/@elburg/CALC-BETA?embed=1&output=1"
         )
         print("")
         print("Credits!")
@@ -92,7 +92,7 @@ def help(a, d):
         print("  " + color.BOLD + "digit0" + color.END + " - first digit")
         print(
             "  " + color.BOLD + "operationtype" + color.END +
-            " - type of mathematical operation to execute. '+' is for addition, '-' for subtraction, '*' for multipication, and '/' for division."
+            " - type of mathematical operation to execute. '+' is for addition, '-' for subtraction, '*' for multiplication, and '/' for division."
         )
         print("  " + color.BOLD + "digit1" + color.END + " - second digit")
         print("")

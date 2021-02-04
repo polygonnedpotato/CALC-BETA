@@ -12,23 +12,23 @@ class color:
 isofflineplatform = 1
 debug = 0
 appinfo = {
-    "appname":
+  "appname":
     "Command-Based mathematical processor",
-    "appnameshort":
+  "appnameshort":
     "CALC-BETA",
-    "version":
-    "1.2-BETA03",
-    "isdebugver":
+  "version":
+    "1.2-BETA04",
+  "isdebugver":
     "true",
-    "isbetaver":
+  "isbetaver":
     "true",
-    "developer":
+  "developer":
     "@elburg",
-    "webversion?":
+  "webversion?":
     "true",
-    "weblink":
+  "weblink":
     "https://repl.it/@elburg/CALC-BETA?embed=1&output=1",
-    "usesclasses":
+  "usesclasses":
     "true",
     "classcount":
     1,
@@ -55,7 +55,7 @@ appinfo = {
 romannum = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
 def help():
-  hlp.help(isofflineplatform , debug)
+  hlp.help(isofflineplatform, debug)
 
 def calcbasic(*arg):
     x = arg[0]
@@ -68,21 +68,30 @@ def calcbasic(*arg):
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
-              d["ans"] = result
+              if noreplit == 0:
+                d["ans"] = result
+              else:
+                pass
         if arg[1] == "-":
             result = str((x - y))
             if result == "inf":
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
-              d["ans"] = result
+              if noreplit == 0:
+                d["ans"] = result
+              else:
+                pass
         if arg[1] == "*":
             result = str((x * y))
             if result == "inf":
               err("0x009", "main.py#def_calcbasic", "c")
             else:
               print("The Result is: " + result)
-              d["ans"] = result
+              if noreplit == 0:
+                d["ans"] = result
+              else:
+                pass
         if arg[1] == "/":
             if y == 0:
                 err("0x001", "main.py#def_calcbasic", "f")
@@ -92,57 +101,71 @@ def calcbasic(*arg):
                   err("0x009", "main.py#def_calcbasic", "c")
                 else:
                   print("The Result is: " + result)
-                  d["ans"] = result
+                  if noreplit == 0:
+                    d["ans"] = result
+                  else:
+                    pass
     else:
-        if arg[1] == "+":
-            result = str((x + y))
-            print("The Result is: " + color.BOLD + result + color.END)
+      if arg[1] == "+":
+        result = str((x + y))
+        print("The Result is: " + color.BOLD + result + color.END)
+        if noreplit == 0:
+          d["ans"] = result
+        else:
+          pass
+      if arg[1] == "-":
+        result = str((x - y))
+        print("The Result is: " + color.BOLD + result + color.END)
+        if noreplit == 0:
+          d["ans"] = result
+        else:
+          pass
+      if arg[1] == "*":
+        result = str((x * y))
+        print("The Result is: " + color.BOLD + result + color.END)
+        if noreplit == 0:
+          d["ans"] = result
+        else:
+          pass
+      if arg[1] == "/":
+        if y == 0:
+          err("0x001", "main.py#def_calcbasic", "f")
+        else:
+          result = str((x / y))
+          print("The Result is: " + color.BOLD + result + color.END)
+          if noreplit == 0:
             d["ans"] = result
-        if arg[1] == "-":
-            result = str((x - y))
-            print("The Result is: " + color.BOLD + result + color.END)
-            d["ans"] = result
-        if arg[1] == "*":
-            result = str((x * y))
-            print("The Result is: " + color.BOLD + result + color.END)
-            d["ans"] = result
-        if arg[1] == "/":
-            if y == 0:
-                err("0x001", "main.py#def_calcbasic", "f")
-            else:
-                result = str((x / y))
-                print("The Result is: " + color.BOLD + result + color.END)
-                d["ans"] = result
+          else:
+            pass
 
 
 def calcrand(*arg):
-    amt = arg[0]
-    low = arg[1]
-    high = arg[2]
-    stop = 0
-    temp = ""
-    tempint = 0
-    tempavg = 0
-    tempset = []
-    while stop == 0:
-        tempset.clear()
-        for x in range(amt):
-            result = str(r.randint(low, high))
-            tempset.append(result)
-            print("Random integer number " + str(x) + " was returned as " +
-                  result)
-        print("All numbers calculated")
-        tempint = min(tempset)
-        if tempint == "inf":
-          err("0x009", "main.py#def_calcrand", "c")
-        else:
-          print("The lowest number generated was " + tempint + ".")
-        print("The lowest number generated was " + tempint + ".")
-        tempint = max(tempset)
-        if tempint == "inf":
-          err("0x009", "main.py#def_calcrand", "c")
-        else:
-          print("The highest number generated was " + tempint + ".")
+  amt = arg[0]
+  low = arg[1]
+  high = arg[2]
+  stop = 0
+  temp = ""
+  tempint = 0
+  tempavg = 0
+  tempset = []
+  while stop == 0:
+    tempset.clear()
+    for x in range(amt):
+      result = str(r.randint(low, high))
+      tempset.append(result)
+      print("Random integer number " + str(x) + " was returned as " +
+            result)
+    print("All numbers calculated")
+    tempint = min(tempset)
+    if tempint == "inf":
+      err("0x009", "main.py#def_calcrand", "c")
+    else:
+      print("The lowest number generated was " + tempint + ".")
+    tempint = max(tempset)
+    if tempint == "inf":
+      err("0x009", "main.py#def_calcrand", "c")
+    else:
+      print("The highest number generated was " + tempint + ".")
         for x in tempset:
             tempavg += int(x)
         tempint = str(tempavg / amt)
@@ -196,7 +219,8 @@ def main():
     loop = 0
     while loop == 0:
         print(
-            "Please enter the type of calculations you want to do. (For Help, type \"help\" or \"exit\" to exit) AVALIABLE:BASIC,RAND,INT"
+          "Please enter the type of calculations you want to do. (For Help, type \"help\" or \"exit\" to exit) "
+          "AVAILABLE:BASIC,RAND,INT "
         )
         temp = input()
         typeofmath = temp
@@ -208,16 +232,22 @@ def main():
             print("")
             temp = input("Enter your first digit:")
             if temp == "ans":
-              d0 = int(d["ans"])
+              if noreplit == 0:
+                d0 = int(d["ans"])
+              else:
+                err("1x000", "main.py#def_main", "f")
             else:
               d0 = int(temp)
             temp = input("Enter your second digit:")
             if temp == "ans":
-              d1 = int(d["ans"])
+              if noreplit == 0:
+                d1 = int(d["ans"])
+              else:
+                err("1x000", "main.py#def_main", "f")
             else:
               d1 = int(temp)
             temp = input(
-                "Enter which operation you want to execute. (Types Avaliable: +, -, *, /):"
+              "Enter which operation you want to execute. (Types Available: +, -, *, /):"
             )
             ty = temp
             calcbasic(d0, ty, d1)
@@ -268,7 +298,7 @@ def r():
     isofflineplatform = 1
     a = int(input("q:"))
     if a == 0:
-        hlp.help(isofflineplatform)
+      hlp.help(isofflineplatform, debug)
     elif a == 1:
         calcbasic(10890, "+", 28753)
         calcbasic(10890, "-", 28753)
@@ -287,7 +317,7 @@ def r():
       s.exit()
     s.exit()
 #os is used to clear the screen
-
+noreplit = 0
 import platform as p
 if p.system() == "Linux":
   isofflineplatform = 0
@@ -296,19 +326,29 @@ if p.system() == "Linux":
     debug = 1
   elif te == " -b":
     import subprocess
+
     subprocess.call("build.sh")
+  elif te == " -noreplit":
+    noreplit = 1
+  elif te == " -d -noreplit":
+    debug = 1
+    noreplit = 1
   else:
     pass
 elif p.system() == "Windows":
   isofflineplatform = 1
-  te = input("CALC has detected that the platform is Windows. This means Colors will not be used. Press ENTER to start.")
+  noreplit = 1
+  te = input(
+    "CALC has detected that the platform is Windows. This means Colors will not be used. Press ENTER to start.")
   if te == " -d":
     debug = 1
   else:
     pass
 elif p.system() == "Darwin":
   isofflineplatform = 0
-  te = input("WARNING! CALC CANNOT RUN ON DARWIN AS THE PYTHON VERSION INSTALLED IS 2.7. PRESS ENTER TO CONTINUE ANYWAYS.")
+  noreplit = 1
+  te = input("WARNING! CALC CANNOT RUN ON DARWIN AS THE PYTHON VERSION INSTALLED IS 2.7. PRESS ENTER TO CONTINUE "
+             "ANYWAYS.")
   if te == " -d":
     debug = 1
   else:
@@ -316,22 +356,31 @@ elif p.system() == "Darwin":
 print("Initializing...")
 print("Importing \"error\"  [0/7]")
 import error as er
+
 print("Importing \"sys\"    [1/7]")
-import sys as s
 print("Importing \"os\"     [2/7]")
 import os as o
+
 print("Importing \"random\" [3/7]")
 import random as r
+
 print("Importing \"math\"   [4/7]")
-import math as m
 print("Importing \"helpapp\"[5/7]")
 import helpapp as hlp
-print("Importing \"db\"     [6/7]")
-from replit import db as d
+
+if noreplit == 0:
+  print("Importing \"db\"     [6/7]")
+  from replit import db as d
+else:
+  print("Platform is not Repl.it. Skipping \"db\"")
+  pass
 print("Finalizing...      [7/7]")
 a = er.ready()
-d["ans"] = "nan"
-d["starttime"] = ""
+if noreplit == 0:
+  d["ans"] = "nan"
+  d["starttime"] = ""
+else:
+  pass
 if debug == 1:
   pass
 else:
